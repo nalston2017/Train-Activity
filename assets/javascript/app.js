@@ -37,9 +37,8 @@ $(document).ready(function(){
 	trainData.on("child_added", function(childSnapshot, prevChildKey){
 
 		console.log(childSnapshot.val());
-		
+
 		var firebaseName = childSnapshot.val().name;
-		var firebaseLine = childSnapshot.val().line;
 		var firebaseDestination = childSnapshot.val().destination;
 		var firebaseTrainTimeInput = childSnapshot.val().trainTime;
 		var firebaseFrequency = childSnapshot.val().frequency;
@@ -58,7 +57,7 @@ $(document).ready(function(){
 		console.log(moment().format("X"));
 
 		// Append train info to table on page
-		$("#trainTable > tbody").append("<tr><td>" + firebaseName + "</td><td>" + firebaseLine + "</td><td>"+ firebaseDestination + "</td><td>" + firebaseFrequency + " mins" + "</td><td>" + nextTrainArrival + "</td><td>" + minutes + "</td></tr>");
+		$("#trainTable > tbody").append("<tr><td>" + firebaseName + "</td><td>"+ firebaseDestination + "</td><td>" + firebaseFrequency + " mins" + "</td><td>" + nextTrainArrival + "</td><td>" + minutes + "</td></tr>");
 
 	});
 });
